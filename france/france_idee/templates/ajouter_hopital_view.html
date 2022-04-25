@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">La Nouvelle France</h1>
+        <p class="lead text-muted">Proposer votre réforme en vous connectant ! Et sinon inscrivez-vous gratuitement.</p>
+        <p>
+            {% if request.user.is_authenticated %}
+          <a href="{% url 'logout_view' %}" class="btn btn-danger my-2">Déconnexion</a>
+            {% else %}
+          <a href="{% url 'login_view' %}" class="btn btn-primary my-2">Connectez-vous</a>
+          <a href="{% url 'register_view' %}" class="btn btn-secondary my-2">Inscription</a>
+            {% endif %}
+        </p>
+      </div>
+    </div>
+  </section>
+<div class="container-fluid vh-100">
+            <div class="">
+                <div class="rounded d-flex justify-content-center">
+                    <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+                        <div class="text-center">
+                            <h3 class="text-primary">Ajouter une loi pour les Hopitaux</h3>
+                        </div>
+                        <div class="p-4">
+
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                {% crispy form %}
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}
