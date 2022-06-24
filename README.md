@@ -32,3 +32,12 @@ Ajouter
 
 Modifier
 ![modifer](https://user-images.githubusercontent.com/31990307/174184972-de7c71d3-30de-411b-b727-1c528b5c80de.PNG)
+
+
+Note :
+
+Le projet Django ne fonctionnait pas au début avec Mongo, en utilisant Djongo.
+La solution a été trouvé en utilisant une version inférieur de Django (2.2.8) et en installant Mongo (Djongo), cela fonctionnait.
+Par la suite, j'ai réussi tout de même une fois le projet terminé a repasser en 4.5.0 de Django tout en faisant marcher Djongo.
+
+En conclusion, il m'a fallut faire le projet en Django 2.2.8 pour faire marcher Djongo (mongo) puis de repasser en 4.5.0 (Django).
